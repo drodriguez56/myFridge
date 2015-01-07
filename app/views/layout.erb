@@ -12,7 +12,8 @@
   <title>Simple Landing Page</title>
 </head>
 
-  <header class="wrapper">
+    <body id ='content'>
+      <header class="wrapper">
     <ul>
         <% if current_user %>
         <a class="home_list" href="/logout"><li>logout</li></a>
@@ -39,9 +40,9 @@
         <% end %>
       </ul>
   </header>
-    <body id ='content'>
-
+  <div id ='main'>
       <%= yield %>
+  </div>
     </body>
 
 </html>

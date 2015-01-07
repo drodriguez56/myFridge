@@ -1,20 +1,5 @@
 <h1>My Fridge</h1>
-<table>
-  <tr>
-    <th>Item</th>
-    <th>Amount</th>
-    <th>Expires</th>
-  </tr>
-    <% current_user.foods.each do |food| %>
-      <tr>
-        <td class = 'items'><%= food.name %></td>
-        <td class = 'items'><%= food.amount %></td>
-        <td class = 'items'><%= food.expiration_date %></td>
-      </tr>
-
-    <% end %>
-</table>
-
+Add new items:
 <form action="/new" method='POST' class='add_form'>
   Item name:
   <input type="text" name='food[name]'>
@@ -22,5 +7,6 @@
   <input type="number" name='food[amount]' min='0'>
   Expiration date:
   <input type="date" name='food[expiration_date]'>
-  <input type="submit" value='add'>
+  <input id = 'add'type="submit" value='add'>
 </form>
+<%= erb :_table %>
