@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -12,9 +12,36 @@
   <title>Simple Landing Page</title>
 </head>
 
-  <div class="wrapper">
+  <header class="wrapper">
+    <ul>
+        <% if current_user %>
+        <a class="home_list" href="/logout"><li>logout</li></a>
+          <a class="home_list" href=""><li><%=current_user.username.capitalize%></li></a>
+        <% else %>
+          <a href='#'  id='login' >Login</a>
+            <form class='login_form' action="/login" method='POST'>
+              username
+              <input type="text" name='user[username]'>
+              password
+              <input type="password" name ='user[password]'>
+              <input type="submit">
+            </form>
+          <a href="#" id="singup" >Singup</a>
+            <form class='singup_form' action="/singup" method='POST'>
+              username
+              <input type="text" name='user[username]'>
+              email
+              <input type="email" name='user[email]'>
+              password
+              <input type="password" name ='user[password]'>
+              <input type="submit">
+            </form>
+        <% end %>
+      </ul>
+  </header>
     <body>
+
       <%= yield %>
     </body>
-  </div>
+
 </html>
