@@ -14,12 +14,23 @@
   display: none;
 
 }
-table, th, td {
-    border: 1px solid black;
+#main{
+  margin: 0 auto;
+  text-align: center;
+}
+th, td {
+    border-top: 1px solid black;
     border-collapse: collapse;
+}
+table{
+  margin: 20px auto;
+  text-align: center;
 }
 th,td {
     padding: 15px;
+}
+.no_style{
+  border: none;
 }
 ul{
   margin: 0;
@@ -30,4 +41,17 @@ li{
 }
 a{
   text-decoration: none;
+}
+#day{
+  font-size: 0.6em;
+}
+.edit_space_box{
+  width: 30px;
+}
+.edit_space_long{
+  width: 150px;
+}
+.disable{
+  color:grey;
+  font-size: 0.6em;
 }
