@@ -1,0 +1,24 @@
+<div class='table_div'>
+<table>
+  <tr>
+    <th class='no_style'></th>
+    <th>Item</th>
+    <th>Amount</th>
+    <th>Days Left</th>
+    <th>Expires</th>
+  </tr>
+    <% @user.each do |food| %>
+      <% date = DateTime.strptime(food.expiration_date,'%Y-%m-%d').day %>
+      <% if date >= Time.now.day%>
+        <tr>
+          <td class='no_style'><a class='edit' href="#"><span>edit</span></td>
+          <td data-item-id="<%= food.id %>" class = 'items item_name'><%= food.name %></td>
+          <td class = 'items item_amount'><%= food.amount %></td>
+          <td class = 'items item_days'><%= (date - Time.now.day).to_s %> <span id ='day'>days</span></td>
+          <td class = 'items item_expires'><%= food.expiration_date %></td>
+
+        </tr>
+      <% end %>
+    <% end %>
+</table>
+</div>
