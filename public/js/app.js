@@ -9,7 +9,10 @@ $('#singup').on("click", function(ev){
   $('.singup_form').toggle();
 });
 
+$('#content').on("submit", 'form .add_form', function(){
 
+
+});
 
 
 
