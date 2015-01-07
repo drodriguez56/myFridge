@@ -1,0 +1,14 @@
+<tr>
+  <td></td>
+  <td colspan="3">
+    <form id='edit_form' action="/edit" method='POST' >
+        <input type="hidden" name='_method' value="PUT">
+        <input id = 'edit_form_id' type="hidden" name='food[id]' value="">
+        <input type="submit" value='done'>
+        <input class='edit_space_long' id="edit_form_text" type="text" name='food[name]'>
+        <input class='edit_space_box' id="edit_form_amount" type="number" name='food[amount]'>
+        <input class ='edit_space_box disable' id="edit_form_days" type="text" disabled>
+        <input class='edit_space_long' id="edit_form_expires" type="date" name='food[expiration_date]'>
+    </form>
+    </td>
+</tr>
