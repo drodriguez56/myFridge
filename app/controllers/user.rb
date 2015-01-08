@@ -35,3 +35,13 @@ put '/edit' do
   end
 
 end
+
+delete '/-item' do
+  item = Food.find(params[:food][:id])
+  item.destroy
+  if request.xhr?
+    204
+  else
+    redirect "/start"
+  end
+end
