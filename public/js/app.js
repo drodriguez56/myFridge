@@ -60,6 +60,18 @@ $('#content').on("submit", 'form#edit_form', function(event){
   });
 
 });
+$('#content').on("submit", 'form#delete_item_form', function(event){
+  event.preventDefault();
+  var $target = $(event.target);
+  $.ajax({
+    url: $target.attr('action'),
+    type: 'DELETE',
+    data: $target.serialize()
+  }).done(function(response){
+    $target.closest('tr').remove();
+  });
+
+});
 
 
 // no puedo editar mas de uno al tiempo (arreglar)
