@@ -17,7 +17,7 @@
     <ul>
         <% if current_user %>
         <a class="home_list" href="/logout"><li>logout</li></a>
-          <a class="home_list" href=""><li><%=current_user.username.capitalize%></li></a>
+          <a class="home_list" href="/start"><li><%=current_user.username.capitalize%></li></a>
         <% else %>
           <a href='#'  id='login' >Login</a>
             <form class='login_form' action="/login" method='POST'>

@@ -16,7 +16,6 @@
           <td class = 'items item_amount'><%= food.amount %></td>
           <td class = 'items item_days'><%= (date - Time.now.day).to_s %> <span id ='day'>days</span></td>
           <td class = 'items item_expires'><%= food.expiration_date %></td>
-
         </tr>
       <% end %>
     <% end %>

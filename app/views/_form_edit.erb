@@ -1,14 +1,21 @@
 <tr>
-  <td></td>
-  <td colspan="3">
+  <td class='no_style'></td>
+  <td colspan="4">
     <form id='edit_form' action="/edit" method='POST' >
         <input type="hidden" name='_method' value="PUT">
         <input id = 'edit_form_id' type="hidden" name='food[id]' value="">
-        <input type="submit" value='done'>
+        <input id='done_button' type="submit" value='done'>
         <input class='edit_space_long' id="edit_form_text" type="text" name='food[name]'>
         <input class='edit_space_box' id="edit_form_amount" type="number" name='food[amount]'>
         <input class ='edit_space_box disable' id="edit_form_days" type="text" disabled>
         <input class='edit_space_long' id="edit_form_expires" type="date" name='food[expiration_date]'>
     </form>
     </td>
+     <td class='no_style'></>
+        <form id="delete_item_form" action="/-item" method="POST">
+          <input type="hidden" method="_method" value='DELETE'>
+          <input id = 'delete_form_id' type="hidden" name='food[id]' value="">
+          <input id="delete_button" type="submit" value='delete'>
+        </form>
+     </td>
 </tr>
