@@ -34,6 +34,8 @@ th,td {
 }
 ul{
   margin: 0;
+  padding: 20px;
+  float: right;
 }
 li{
   list-style: none;
@@ -41,6 +43,9 @@ li{
 }
 a{
   text-decoration: none;
+  color: black;
+  font-weight: 600;
+
 }
 #day{
   font-size: 0.6em;
@@ -54,4 +59,35 @@ a{
 .disable{
   color:grey;
   font-size: 0.6em;
+}
+h1{
+  font-family: 'Dosis', sans-serif;
+
+}
+html{
+  font-family: 'Open Sans';
+}
+#delete_button{
+  background-color: #FF865E;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+  height: 20px;
+  width: 40px;
+  font-size: 0.5em;
+}
+#delete_item_form, #edit_form{
+  display: inline-block;
+}
+#done_button{
+  border-style: none;
+  border-radius: 5px;
+  background-color: #77BD61;
+  color: white;
+  font-weight: 600;
+  margin-left:-90px;
+}
+#title{
+  font-size: 3em;
+
 }

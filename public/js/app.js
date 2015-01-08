@@ -18,8 +18,8 @@ $('#content').on("submit", 'form.add_form', function(event){
     data: $target.serialize()
   }).done(function(response){
     $('table').replaceWith(response);
-    $('form.add_form').children('input').val('')
-    $('form.add_form#add').val('add')
+    $('form.add_form').children('input').val('');
+    $('form.add_form#add').val('add');
   });
 
 });
@@ -44,6 +44,7 @@ $('#content').on("click", '.edit', function(event){
     $('#edit_form_days').val(days);
     $('#edit_form_expires').val(expires);
     $('#edit_form_id').val(id);
+    $('#delete_form_id').val(id)
   });
 });
 
