@@ -4,9 +4,9 @@ Add new items:
   Item name:
   <input type="text" name='food[name]'>
   Amount:
-  <input type="number" name='food[amount]' min='0'>
+  <input type="number" name='food[amount]' min='0'  step= "0.1">
   Expiration date:
-  <input type="date" name='food[expiration_date]'>
+  <input type="date" name='food[expiration_date]' min="<%= Date.today %>">
   <input id = 'add' type="submit" value='add'>
 </form>
 <%= erb :_table %>

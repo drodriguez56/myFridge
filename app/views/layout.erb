@@ -21,24 +21,9 @@
         <a class="home_list" href="/logout"><li>logout</li></a>
           <a class="home_list" href="/start"><li><%=current_user.username.capitalize%></li></a>
         <% else %>
+         <div id ='login_signup_space'><div id='to_replace'></div></div>
           <a href='#'  id='login' >Login</a>
-            <form class='login_form' action="/login" method='POST'>
-              username
-              <input type="text" name='user[username]'>
-              password
-              <input type="password" name ='user[password]'>
-              <input type="submit">
-            </form>
-          <a href="#" id="singup" >Singup</a>
-            <form class='singup_form' action="/singup" method='POST'>
-              username
-              <input type="text" name='user[username]'>
-              email
-              <input type="email" name='user[email]'>
-              password
-              <input type="password" name ='user[password]'>
-              <input type="submit">
-            </form>
+          <a href="#" id="signup" >signup</a>
         <% end %>
       </ul>
   </header>
