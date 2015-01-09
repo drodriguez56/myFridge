@@ -1,14 +1,30 @@
 $(document).ready(function (){
 
-$('#login').on("click", function(ev){
-  ev.preventDefault();
-  $('.login_form').toggle();
-});
-$('#singup').on("click", function(ev){
-  ev.preventDefault();
-  $('.singup_form').toggle();
+$('#content').on("click", "#login", function(event){
+  event.preventDefault();
+  var $target =  $(event.target);
+  $.ajax({
+    url:'/login',
+    type: 'GET'
+  }).done(function(response){
+    $('#login_signup_space').children().replaceWith(response);
+    $('#login').css('display', 'none');
+    $('#signup').css('display', 'inline');
+  });
 });
 
+$('#content').on("click", "#signup", function(event){
+  event.preventDefault();
+  var $target =  $(event.target);
+  $.ajax({
+    url:'/signup',
+    type: 'GET'
+  }).done(function(response){
+    $('#login_signup_space').children().replaceWith(response);
+    $('#signup').css('display', 'none');
+    $('#login').css('display', 'inline');
+  });
+});
 $('#content').on("submit", 'form.add_form', function(event){
   event.preventDefault();
   var $target = $(event.target);
@@ -18,8 +34,9 @@ $('#content').on("submit", 'form.add_form', function(event){
     data: $target.serialize()
   }).done(function(response){
     $('table').replaceWith(response);
-    $('form.add_form').children('input').val('');
-    $('form.add_form#add').val('add');
+    $('form.add_form').children('input').val('').end().find('#add').val('add');
+  }).fail(function(obj){
+    alert("Couldn't save entry: " + obj.responseText);
   });
 
 });
