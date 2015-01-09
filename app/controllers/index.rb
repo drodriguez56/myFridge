@@ -2,6 +2,14 @@ get '/' do
   erb :index
 end
 
+get '/login' do
+  erb :_form_login, layout: false
+end
+
+get '/signup' do
+  erb :_form_signup, layout: false
+end
+
 post '/login' do
   user = User.find_by(username: params[:user][:username])
   if user && user.authenticate(params[:user][:password])
@@ -12,7 +20,7 @@ post '/login' do
   end
 end
 
-post '/singup' do
+post '/signup' do
   user = User.new(params[:user])
   if user.save
     session[:user_id] = user.id
