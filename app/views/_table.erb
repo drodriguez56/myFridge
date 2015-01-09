@@ -8,7 +8,7 @@
     <th>Expires</th>
   </tr>
     <% @user.each do |food| %>
-      <% date = DateTime.strptime(food.expiration_date,'%Y-%m-%d').day %>
+      <% date = food.expiration_date.day %>
       <% if date >= Time.now.day%>
         <tr>
           <td class='no_style'><a class='edit' href="#"><span>edit</span></td>
